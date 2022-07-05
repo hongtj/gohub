@@ -12,7 +12,7 @@ type User struct {
 
 	Pid   uint64  `json:"pid,omitempty" gorm:"default:;comment:父级ID"`
 	Name  string  `json:"name,omitempty" gorm:"size:50;comment:姓名"`
-	Phone string  `json:"phone,omitempty" gorm:"index:,unique;size:20;comment:电话"`
+	Phone string  `json:"phone,omitempty" gorm:"uniqueIndex:idx_phone;size:20;comment:电话"`
 
 	models.CommonTimestampsField
 }

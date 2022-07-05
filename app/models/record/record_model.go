@@ -6,7 +6,7 @@ import "gohub/app/models"
 type Record struct {
 	models.BaseModel
 
-	Uid   uint64  `json:"pid,omitempty" gorm:"default:;comment:用户ID"`
+	Uid   uint64  `json:"uid,omitempty" gorm:"index:idx_uid;default:;comment:用户ID"`
 	Cost  float64 `json:"cost,omitempty" gorm:"default:;comment:消费"`
 
 	models.CommonTimestampsField
