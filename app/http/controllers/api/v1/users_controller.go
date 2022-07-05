@@ -28,7 +28,9 @@ func (ctrl *UsersController) UserCost(c *gin.Context) {
 
 	data := user.GetByPhone(request.Phone)
 	if data.ID == 0 {
-		response.Abort404(c)
+		response.JSON(c, gin.H{
+			"message": "该用户不存在，请确认手机号是否正确" ,
+		})
 		return
 	}
 	userIds = append(userIds, data.ID)
